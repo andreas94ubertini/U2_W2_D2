@@ -4,6 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Agenzia di Viaggi</title>
+    <style>
+        .nascondi:hover{
+            cursor: pointer;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" rel="stylesheet">
 </head>
@@ -32,6 +40,13 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#recensioni">Recensioni</a>
+                </li>
+                <li>
+                    <div class="btn-group" role="toolbar" aria-label="Basic example">
+                        <button type="button" class="btn btn-primary nav-button">Conta viaggi</button>
+                        <button  type="button" class="btn btn-primary nav-button">Aggiungi badge</button>
+                        <button type="button" class="btn btn-primary nav-button">Rimuovi cards</button>
+                    </div>
                 </li>
             </ul>
             <form class="d-flex" role="search">
@@ -110,7 +125,7 @@
         <div class="ps-1 col-6 col-lg-4">
             <div class="card">
                 <img src="asset/imgs/maldive.webp" class="card-img-top" alt="maldive pic">
-                <span class="badge bg-danger position-absolute top-0 end-0">HOT</span>
+                <span class="bg-danger position-absolute top-0 end-0 invisible">HOT</span>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -122,7 +137,7 @@
         <div class="ps-1 col-6 col-lg-4">
             <div class="card">
                 <img src="asset/imgs/maldive.webp" class="card-img-top" alt="maldive pic">
-                <span class="badge bg-danger position-absolute top-0 end-0">HOT</span>
+                <span class="badge bg-danger position-absolute top-0 end-0 invisible">HOT</span>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -134,7 +149,7 @@
         <div class="ps-1 col-6 col-lg-4">
             <div class="card">
                 <img src="asset/imgs/maldive.webp" class="card-img-top" alt="maldive pic">
-                <span class="badge bg-danger position-absolute top-0 end-0">HOT</span>
+                <span class="badge bg-danger position-absolute top-0 end-0 invisible">HOT</span>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -146,7 +161,7 @@
         <div class="ps-1 col-6 col-lg-4">
             <div class="card">
                 <img src="asset/imgs/maldive.webp" class="card-img-top" alt="maldive pic">
-                <span class="badge bg-danger position-absolute top-0 end-0">HOT</span>
+                <span class="badge bg-danger position-absolute top-0 end-0 invisible">HOT</span>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -158,7 +173,7 @@
         <div class="ps-1 col-6 col-lg-4">
             <div class="card">
                 <img src="asset/imgs/maldive.webp" class="card-img-top" alt="maldive pic">
-                <span class="badge bg-danger position-absolute top-0 end-0">HOT</span>
+                <span class="badge bg-danger position-absolute top-0 end-0 invisible">HOT</span>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -170,7 +185,7 @@
         <div class="ps-1 col-6 col-lg-4">
             <div class="card">
                 <img src="asset/imgs/maldive.webp" class="card-img-top" alt="maldive pic">
-                <span class="badge bg-danger position-absolute top-0 end-0">HOT</span>
+                <span class="badge bg-danger position-absolute top-0 end-0 invisible">HOT</span>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -236,9 +251,30 @@
     </div>
 </main>
 <footer class="container-fluid bg-secondary d-flex flex-column align-items-center py-5">
-    <div class="col"><button type="button" class="btn btn-secondary border-light text-secondary-emphasis">Contattaci</button></div>
+    <div class="col"><button type="button" class="btn btn-secondary border-light text-secondary-emphasis" data-bs-toggle="modal" data-bs-target="#EmailModal">Contattaci</button></div>
     <div class="col-12 text-center"> <span id="year">2021</span> <span>agenzia di viaggi. All Rights Reseverd.</span></div>
 </footer>
+<div class="modal fade" id="EmailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Grazie per il tuo interesse</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                Inserisci la tua Email per essere riconttato
+                <form>
+                    <input type="email" placeholder="example@gmail.com">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Conferma</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
